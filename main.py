@@ -1,7 +1,5 @@
-import os
 import pygame
 import random
-
 pygame.init()
 zvezdolet = pygame.image.load(r'C:\Users\User\PycharmProjects\pythonProject2\zvezdolet.png')
 zvezdolet = pygame.transform.scale(zvezdolet, (80, 80))
