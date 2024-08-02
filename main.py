@@ -23,8 +23,6 @@ moving_left = False
 moving_right = False
 moving_up = False
 moving_down = False
-rotat_l = False
-rotat_r = False
 meteors = []
 speed_mete = 3
 # Цвета-------------------------------
@@ -37,7 +35,7 @@ zvezdolet_rect = zvezdolet.get_rect()
 zvezdolet_rect.x = 300
 zvezdolet_rect.y = 850
 
-angle = 0
+
 
 
 #----------------------------------------------------
@@ -83,12 +81,6 @@ while running:
                 moving_up = True
             elif event.key == pygame.K_s:
                 moving_down = True
-            elif event.key == pygame.K_q:
-                rotat_l = True
-                angle += 1
-            elif event.key == pygame.K_e:
-                rotat_r = True
-                angle -= 1
 
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_a:
@@ -99,10 +91,7 @@ while running:
                 moving_up = False
             elif event.key == pygame.K_s:
                 moving_down = False
-            elif event.key == pygame.K_q:
-                rotat_l = False
-            elif event.key == pygame.K_e:
-                rotat_r = False
+
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1 and a == False:
                 a = True
@@ -134,10 +123,7 @@ while running:
         zvezdolet_rect.y -= speed
     if moving_down and zvezdolet_rect.y <= 880:
         zvezdolet_rect.y += speed
-    if rotat_l == True:
-        centr = pygame.transform.rotate(zvezdolet, 10)
-    if rotat_r == True:
-        centr = pygame.transform.rotate(zvezdolet, 10)
+
     screen.blit(zvezdolet, zvezdolet_rect)
     # ---------------------------------------------------------------------------------
     # генерация метеоров--------------------------------------------------------------
